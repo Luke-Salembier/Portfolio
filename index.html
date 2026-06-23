@@ -513,7 +513,7 @@
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 2000px;
+            max-height: 10000px;
             padding: 0 1.5rem 1.2rem;
         }
 
@@ -727,6 +727,17 @@
         /* Mode sombre : étoiles visibles, nuages cachés */
         body.dark-mode .stars { display: block; }
         body.dark-mode .clouds { display: none; }
+
+        .mySlides {display:none;}
+
+        /* Bordure dorée pour les SAé */
+        .accordion-item.sae {
+            border-color: #f59e0b;
+        }
+
+        .accordion-item.sae.active {
+            border-color: #d97706;
+        }
     </style>
 </head>
 <body>
@@ -966,927 +977,551 @@
 
 
                 // === Données des compétences ===
-        const skillsData = {
+const skillsData = {
             ue11: {
                 title: "UE1 - Concevoir des systèmes industriels",
                 body: `
 
-                    <h1>Semestre 1</h1>
-                    <h3>Ressources</h3>
+                    <h1>Composantes Essentielles</h1>
                     <div class="accordion">
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.01 - Anglais et Communication
+                                CE1.01 : En respectant les normes industrielles.
                                 <span class="accordion-icon">+</span>
                             </button>
 
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
+                                <p></p>  
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                CE1.02 : En s'assurant de la réutilisation des parties de code ou de projets.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                CE1.03 : En assurant une veille technologique.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                            
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                CE1.04 : En communication en français et en anglais avec les différents acteurs impliqués.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p></p>
+                            </div>
+                        </div>
+
+                    <h1>Apprentissages Critiques</h1>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC11.01 : Analyser les schémas techniques (P&ID, plans mécaniques, schémas électriques) 
+                                correspondant à l'installation existante d'un client ou à un projet en cours.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC11.02 : Choisir les capteurs et les actionneurs adaptés aux besoins du client, aux normes correspondant à 
+                                son secteur d'activité, et à son procédé.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p></p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC11.03 : Concevoir l'Interface Homme Machine (logiciel de supervision, panneau tactile, tablette ou solution mobile), 
+                                permettant de piloter l'installation localement ou à distance.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div>     
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC11.04 : Programmer les automates programmables, les robots, les IHM permettant de répondre au 
+                                cahier des charges du projet d'automatisme industriel.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div> 
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC11.05 : Utiliser la vision industrielle et l'intelligence artificielle dans le but d'améliorer la production.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div> 
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC11.06 : Planifier les mouvements et les trajectoires d'un robot
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div> 
+
+                    <h1>Situations Professionnelles</h1>   
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div>    
+                        <br>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Conseil à un client dans le but de lui permettre d'améliorer sa productivité 
+                                et de la faire évoluer vers une industrie 4.0 ou 5.0.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div>    
+
+                    <h1>Saé</h1>
+                        <div class="accordion-item sae">
+                            <button class="accordion-btn">
+                                SAE1.3 - Conception d'une application d'automatisation ou de robotique
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                      
+                                <h4>Objectifs</h4>
+                                <ul style="padding-left: 1.5rem; list-style: disc;">
+                                    <li>Conception d'un robot démonstrateur</li>
+                                    <li>Le démonstrateur devra prendre en compte les différents aspects de la formation</li>
+                                    <li>Complémentarité IT & OT</li>
+                                    <li>Projet innovant et interactif</li>
+                                </ul>
+
+                                <div style="text-align: center; margin: 2rem 0;">
+                                    <div class="img-card" style="display: inline-block;">
+                                        <p class="img-title">Notre projet : Robot joueur de poker, Rob'em</p>
+                                        <img src="robem.jpg" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in;">
+                                    </div>
                                 </div>
-                                <p>Dans cette ressource, j'ai pu faire des recherches de solutions en anglais avec des 
-                                présentations écrites et orales ce qui m'a permis de fluidifier mes discours en anglais ainsi
-                                que mon écrit, ces expériences me permettront de communiquer plus aisément à l'échelle internationale, 
-                                de rechercher des informations et renseigement plus diverses et de pouvoir proposer des solutions
-                                pour plus de personnes. J'ai un niveau B2 en anglais, je suis capable d'avoir une conversation
-                                en anglais, je comprend une très grande majorité de ce que je lis et entends en anglais.</p>
+                                Notre groupe était composé de 6 personnes, nous avons choisi après un brainstorming de concevoir un robot qui joue au poker. <br>                     
+                                Description du projet :
+                                Le robot niryo Ned2 est positionné sur un côté du plateau de jeu, il a à sa portée ses propres cartes et jetons,
+                                le centre du plateau ou sont posées les cartes du board, et sa caméra. 
+                                Comment il fonctionne ? Lors du premier tour, il prend ses cartes grâce à sa ventouse et les emmène au dessus
+                                de la caméra afin de reconnaître et mémoriser sa main, ensuite il regarde les cartes du board grâce à sa caméra 
+                                positionnée sur son bras, puis la partie se déroule comme une partie de poker classique et à chaque tour il 
+                                regarde les nouvelles cartes dévoilées sur le board et calcul ses chances de gagner et peut même bluffer de façon aléatoire.
+                                On s'est donc répartit les tâches.
+                                Les tâches qui m'ont été confiées étaient : 
+                                <ul style="padding-left: 1.5rem; list-style: disc;">
+                                    <li>Conception 3D du plateau de jeu, du support de la caméra et du support des cartes</li>
+                                    <li>Conception de l'affiche de présentation du démonstrateur</li>
+                                </ul>
+                                Durant ce projet, j'ai pu peaufiner mes compétences de modélisations 3D sur le logiciel 
+                                Solidworks, j'ai appris à imprimer mes pièces à l'imprimante 3D et découper des pièces à la découpe laser.
+                                Et j'ai pu développer mes premières compétences en languages Python
+                            </div>
+                        </div>
+
+                        <div class="accordion-item sae">
+                            <button class="accordion-btn">
+                                <h4>SAE 2.1 - Conception et déploiement d'une solution d'automatisme</h4>
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+
+                                <div class="w3-content w3-display-container" style="text-align: center; margin: 2rem 0;">
+                                    <div class="img-card" style="display: inline-block;">
+                                        <img class="mySlides" src="sae21_affiche.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in;">
+                                        
+                                        <img class="mySlides" src="detection_laser.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in;">
+
+                                        <img class="mySlides" src="schema2.1.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in;">
+                                    </div>
+                                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+                                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                                </div>
+                                <div class="w3-panel w3-round-large">
+                                    <h4>Objectifs :</h4>
+                                    <ul style="padding-left: 1.5rem; list-style: disc;">
+                                        <li>Réaliser un système capable de mesurer la rectitude du profilé directement sur la machine qui a
+                                        réalisé l'usinage.</li>
+                                        <li>La mesure de rectitude devra pouvoir être mesurée directement par l'opérateur au travers d'une IHM.
+                                        A la fin de la mesure, la valeur maximale mesurée devra pouvoir être affichée à l'écran.</li>
+                                        <li>Les différentes valeur maximales mesurées devront pouvoir être stockées soit localement, soit sur
+                                        un serveur distant. Chaque entrée devra comporter la date et l'heure de la mesure, la référence de la
+                                        pièce et la mesure en mm.</li>
+                                    </ul>
+                                    Lors de ce projet, j'ai effectué des schémas électriques ainsi que le câblage des moteurs
+                                    pas à pas, du laser et du capteur de luminosité, des modélisations 3D des supports du laser et du capteur, 
+                                    la programmation en C++ d'un capteur de luminosité qui récupère une valeur analogique de l'intensité 
+                                    lumineuse et qui la convertit en valeur booléenne lorsqu'elle atteint un seuil élevé ce qui signifie que 
+                                    la lumière du laser touche le capteur, j'ai aussi appris à dénuder des câbles et à les souder. 
+                                    Ce projet m'a permis de me rappeler des notions en C++ que j'ai apprises lors de mon année de terminale STI2D.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item sae">
+                            <button class="accordion-btn">
+                                SAE 2.2 - Mise en service et déploiement d'une solution de robotique
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                    
+                                    
+                                <div style="text-align: center; margin: 2rem 0;">
+                                    <div class="img-card" style="display: inline-block;">
+                                        <p class="img-title">Notre projet : </p>
+                                        <video width="100%" controls style="border-radius: 8px;">
+                                            <source src="fanuc.mp4" type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="w3-panel w3-round-large">
+                                    Ce projet était divisé en 2 parties, la première étant la simulation de la presse à injection 
+                                    et la deuxième la programmation du robot et la conception de son préhenseur. Étant donné que notre 
+                                    groupe était composé de 6 personnes, nous avions décidé de nous séparer en 2 "sous-groupes", j'ai donc 
+                                    choisi avec mon groupe de travailler sur le robot. J'ai principalement travaillé sur la réalisation des 
+                                    Graphcets et des programmes nécessaires pour le fonctionnement du robot et du vérin ainsi que le capteur magnétique, 
+                                    les boutons poussoirs et les voyants. Dans ce projet j'ai beaucoup progressé 
+                                    dans la programmation des robots Fanuc notamment dans la navigation sur l'interface du teach pendant et dans la programmation des entrées/sorties. 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item sae">
+                            <button class="accordion-btn">
+                                SAE 2.4 - Conception et maintenance d'une solution permettant d'améliorer la productivité d'un client
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
                                 
                             </div>
                         </div>
 
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R1.03 - Maths pour l'IT
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag"></span>
-                                </div>
-                                <p>Je maîtrise le calcul des probabilités et les mathématiques discrètes mais j'ai 
-                                encore du mal avec les opérations matricielles et l'algèbre
-                                linéaire ainsi que la résolution des équations différentielles.</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R1.07 - Programmation, Algorithmique
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.02</span>
-                                    <span class="tag">CE1.03</span>
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <div class="tags">
-                                    <span class="tag">AC11.04</span>
-                                </div>                                
-                                <p>L'apprentissage des bases de la programmation en Python, 
-                                à travers les cours, les TD, les exercices CodeRunner 
-                                et le projet Tic-Tac-Toe, m'a permis de développer 
-                                ma logique algorithmique et ma capacité à structurer un programme, 
-                                des compétences essentielles pour concevoir des systèmes industriels 
-                                automatisés et connectés. Je suis donc un programmeur amateur en python, je suis capable 
-                                de réaliser des programmes simples et des plus avancés à l'aide de librairies pour résoudre 
-                                des problèmes. 
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R1.17 - Introduction à la régulation et aux asservissements
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.03</span>
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <div class="tags">
-                                    <span class="tag">AC11.01</span>
-                                </div>
-                                <p>Cette ressource d'introduction à l'Industrie 4.0 et 5.0 offre une vision globale du monde 
-                                    industriel moderne en mettant en lumière la convergence devenue indispensable entre 
-                                    les technologies opérationnelles (OT) et les technologies de l'information (IT). Dans 
-                                    l'optique de concevoir et d'appréhender des systèmes industriels complexes, j'ai appris
-                                    à maîtriser les bases des schémas P&ID en apprenant les symboles les plus courants
-                                    pour les procédés, des schémas fonctionnels pour l'analyse des 
-                                    boucles de régulation, ou encore de la pyramide CIM pour structurer efficacement les 
-                                    architectures réseaux et comment les industriels font pour concevoir des nouvelles pièces
-                                    en les modélisant en 3D sur des logiciels tels que Solidworks puis également réaliser leurs 
-                                    plans mécaniques afin de détailler la composition des assemblages. </p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R1.19 - Automatismes - Logique combinatoire et séquentielle
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.01</span>
-                                </div>
-                                <div class="tags">
-                                    <span class="tag">AC11.04</span>
-                                </div>
-                                <p>Dans ce module, j'ai pu apprendre comment fonctionne un automate ou plutôt comment 
-                                    il traite les informations. La base de l'information est l'algèbre de Boole, tout les 
-                                    calculs dans l'automate se font à base d'algèbre de Boole. J'ai pu apprendre comment
-                                    programmer des automates siemens à l'aide du logiciel TIA Portal en languages FBD, LADDER
-                                    et GRAPHCET. Pour cela, j'ai appris les fonctions logiques, les temporisations TON, TOF et TP, 
-                                    les mémoires (set et reset) et les compteurs (codeur inrémental et absolu). 
-                                    Je maîtrise assez bien ces notions, sauf les compteurs que je maîtrise moins bien,
-                                    ce qui me permet de réaliser des programmes simples pour des systèmes automatiques. 
-                                    </p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R1.21 - Introduction et caractérisation des robots
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.03</span>
-                                </div>
-                                <div class="tags">
-                                    <span class="tag">AC11.04</span>
-                                </div>
-                                <p>Lors de nos cours et TP d'introduction à la robotique, j'ai pu énormément élargir ma culture
-                                sur ce sujet, en effet j'ai pu apprendre l'évolution de la robotique, de leur utilité,
-                                ce qui existe déjà. Une notion importante est la différence entre les robots traditionnels
-                                et les robots collaboratifs autrement appelés "cobots". Ensuite j'ai aussi appris comment
-                                fonctionne les robots d'un point de vue mécanique en particulier les bras robotisés 
-                                polyarticulés, la notion de degrés de liberté et les 2 types de liasons 
-                                prismatiques et rotoïdes qui définissent l'ensemble des mouvements réalisables par le robot.
-                                J'ai pu travailler avec des robots Nyrio Ned2 et des robots mbot2 afin d'acquérir les 
-                                bases et mes premières experiences avec un robot. Puis ensuite j'ai pu travailler avec des 
-                                robots de Universal Robots et de Fanuc qui sont des robots utilisés dans l'industrie et donc
-                                dangereux. J'ai travaillé avec un UR5, un UR10 qui sont des bras robotisés polyarticulés collaboratifs
-                                et un robot SCARA, DELTA ainsi qu'un bras polyarticulé de chez Fanuc. Je maîtrise assez
-                                bien Polyscope qui est l'interface pour programmer les robots de UR et je maîtrise très bien
-                                TPE-B qui est celle pour programmer les robots Fanuc.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R1.22 - Bases de la mécanique pour la robotique
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.03</span>
-                                </div>
-                                <div class="tags">
-                                    <span class="tag">AC11.01</span>
-                                </div>                                
-                                <p>Cette ressource entre en lien direct avec la robotique. Ici j'ai pu apprendre
-                                    les notions de forces, de moments, de transmission de puissances mais également les 
-                                    torseurs qui sont des notions clées pour prédire, comprendre et manipuler les mouvements des 
-                                    robots. L'étude statique est aussi indispensable pour comprendre l'équilibre du robot,
-                                    comment le système compense dynamiquement et statiquement le poids propre de ses segments,
-                                    le poid de son outil/préhenseur et de l'objet qu'il attrape (payload). J'ai encore du mal
-                                    à modéliser les actions mécaniques et les calculs des torseurs, je considère donc cette
-                                    ressources "en cours d'acquisition". Lors des TP, j'ai pu fluidifier ma maîtrise du logiciel
-                                    Solidworks en découvrant des fonctionnalités comme Meca3D et en m'exerçant à modéliser et assembler des pièces 3D.</p>
-                            </div>
-                        </div>      
-                    </div>
-                    </br>
-                    <div class="w3-panel w3-round-large w3-indigo">
-                    <h3>SAE1.3 - Conception d'une application d'automatisation ou de robotique</h3>
-                    <div class="tags">
-                        <span class="tag">CE1.01</span>
-                        <span class="tag">CE1.02</span>
-                        <span class="tag">CE1.03</span>
-                        <span class="tag">CE1.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">AC11.01</span>
-                        <span class="tag">AC11.02</span>
-                        <span class="tag">AC11.03</span>
-                        <span class="tag">AC11.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.</span>
-                    </div>                           
-                    <h4>Objectifs</h4>
-                    <ul style="padding-left: 1.5rem; list-style: disc;">
-                        <li>Conception d'un robot démonstrateur</li>
-                        <li>Le démonstrateur devra prendre en compte les différents aspects de la formation</li>
-                        <li>Complémentarité IT & OT</li>
-                        <li>Projet innovant et interactif</li>
-                    </ul>
-
-
-                    <div style="text-align: center; margin: 2rem 0;">
-                        <div class="img-card" style="display: inline-block;">
-                            <p class="img-title">Notre projet : Robot joueur de poker, Rob'em</p>
-                            <img src="robem.jpg" alt="Description"
-                            onclick="openLightbox(this.src)"
-                            style="cursor: zoom-in;">
-                        </div>
-                    </div>
-                    <div class="w3-panel w3-round-large w3-indigo">
-                    Notre groupe était composé de 6 personnes, nous avons choisi après un brainstorming de concevoir un robot qui joue au poker. </br>                     
-                    Description du projet :
-                    Le robot niryo Ned2 est positionné sur un côté du plateau de jeu, il a à sa portée ses propres cartes et jetons,
-                    le centre du plateau ou sont posées les cartes du board, et sa caméra. 
-                    Comment il fonctionne ? Lors du premier tour, il prend ses cartes grâce à sa ventouse et les emmène au dessus
-                    de la caméra afin de reconnaître et mémoriser sa main, ensuite il regarde les cartes du board grâce à sa caméra 
-                    positionnée sur son bras, puis la partie se déroule comme une partie de poker classique et à chaque tour il 
-                    regarde les nouvelles cartes dévoilées sur le board et calcul ses chances de gagner et peut même bluffer de façon aléatoire.
-                    On s'est donc répartit les tâches.
-                    Les tâches qui m'ont été confiées étaient : 
-                    <ul style="padding-left: 1.5rem; list-style: disc;">
-                        <li>Conception 3D du plateau de jeu, du support de la caméra et du support des cartes</li>
-                        <li>Conception de l'affiche de présentation du démonstrateur</li>
-                    </ul>
-                    Durant ce projet, j'ai pu peaufiner mes compétences de modélisations 3D sur le logiciel 
-                    Solidworks, j'ai appris à imprimer mes pièces à l'imprimante 3D et découper des pièces à la découpe laser.
-                    Et j'ai pu développer mes premières compétences en languages Python
-                    </div>
-                    </div>
-                    <h1>Semestre 2</h1>
-                    <h3>Ressources</h3>
-
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.01 - Anglais et communication
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>qeobq</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.04 - Maths pour l'OT
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag"></span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.05 - Physique: Domaine Fréquentiel et filtrage
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.03</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>                        
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.07 - Programmation Orientée Objet
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.02</span>
-                                    <span class="tag">CE1.03</span>
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <div class="tags">
-                                    <span class="tag">AC11.01</span>
-                                    <span class="tag">AC11.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.15 - Instrumentation
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                    <span class="tag">CE1.03</span>
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <div class="tags">
-                                    <span class="tag">AC11.01</span>
-                                    <span class="tag">AC11.02</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.17 - Programmation des régulateurs
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>                    
-                    </div>
-
-                    <div class="w3-panel w3-round-large w3-indigo">
-                    <h3>SAE 2.1 - Conception et déploiement d'une solution d'automatisme</h3>
-                    <div class="tags">
-                        <span class="tag">CE1.01</span>
-                        <span class="tag">CE1.02</span>
-                        <span class="tag">CE1.03</span>
-                        <span class="tag">CE1.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">AC11.01</span>
-                        <span class="tag">AC11.02</span>
-                        <span class="tag">AC11.03</span>
-                        <span class="tag">AC11.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.</span> 
-                    </div> 
-                    <div class="tags">
-                        <span class="tag">Conseil à un client dans le but de lui permettre d'améliorer sa productivité et de la faire évoluer vers une industrie 4.0 ou 5.0.</span>
-                    </div>
-
-                    <div style="text-align: center; margin: 2rem 0;">
-                        <div class="img-card" style="display: inline-block;">
-                            <p class="img-title">Affiche - Saé 2.1</p>
-                            <img src="sae21_affiche.png" alt="Description"
-                            onclick="openLightbox(this.src)"
-                            style="cursor: zoom-in;">
-                        </div>
-                    </div>
-                    <div class="w3-panel w3-round-large w3-indigo">
-                        Objectifs : Réaliser un système capable de mesurer la rectitude du profilé directement sur la machine qui a
-                        réalisé l'usinage.
-                    </div>
-                    </div>                
-
-                    <div class="w3-panel w3-round-large w3-indigo">
-                    <h3>SAE 2.2 - Mise en service et déploiement d'une solution de robotique</h3>
-                    <div class="tags">
-                        <span class="tag">CE1.01</span>
-                        <span class="tag">CE1.02</span>
-                        <span class="tag">CE1.03</span>
-                        <span class="tag">CE1.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">AC11.01</span>
-                        <span class="tag">AC11.02</span>
-                        <span class="tag">AC11.03</span>
-                        <span class="tag">AC11.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.</span>
-                    </div>  
-                    <div class="tags">
-                        <span class="tag"><span class="tag">Conseil à un client dans le but de lui permettre d'améliorer sa productivité et de la faire évoluer vers une industrie 4.0 ou 5.0.</span>
-                    </div>
-                        
-                        <div style="text-align: center; margin: 2rem 0;">
-                        <div class="img-card" style="display: inline-block;">
-                            <p class="img-title">Notre projet : </p>
-                            <video width="100%" controls style="border-radius: 8px;">
-                                <source src="fanuc.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                        </div>
-                    <div class="w3-panel w3-round-large w3-indigo">
-                    Ce projet était divisé en 2 parties, la première étant la simulation de la presse à injection 
-                    et la deuxième la programmation du robot et la conception de son préhenseur. Étant donné que notre 
-                    groupe était conposé de 6 personnes, nous avions décidé de nous séparer en 2 "sous-groupes", j'ai donc 
-                    choisi avec mon groupe de travailler sur le robot. J'ai principalement travaillé sur la réalisation des 
-                    Graphcets et des programmes nécessaires pour le fonctionnement du robot et du vérins ainsi que le capteur magnétique, 
-                    les boutons poussoirs et les voyants. Dans ce projet j'ai beaucoup progressé 
-                    dans la programmation des robots Fanuc notamment dans la navigation sur l'interface du teach pendant et dans la programmation des entrées/sorties. 
-                    </div>
-                    </div>
-
-                    </div>
-                    <div class="w3-panel w3-round-large w3-indigo">
-                    <h3>SAE 2.4 - Conception et maintenance d'une solution permettant d'améliorer la productivité d'un client</h3>
-                    <div class="tags">
-                        <span class="tag">CE1.01</span>
-                        <span class="tag">CE1.02</span>
-                        <span class="tag">CE1.03</span>
-                        <span class="tag">CE1.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">AC11.01</span>
-                        <span class="tag">AC11.02</span>
-                        <span class="tag">AC11.03</span>
-                        <span class="tag">AC11.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.</span>
-                    </div>  
-                    <div class="tags">
-                        <span class="tag"><span class="tag">Conseil à un client dans le but de lui permettre d'améliorer sa productivité et de la faire évoluer vers une industrie 4.0 ou 5.0.</span>
-                    </div>
-                    <div class="w3-panel w3-round-large w3-indigo">
-
-                    </div>
-                    </div>
-                    <br>
-
-                    <br>
-                    <h3>Compétences acquises</h3>
-                    <ul style="padding-left: 1.5rem; list-style: disc;">
-                        <li>Compétence 1</li>
-                        <li>Compétence 2</li>
-                    </ul>
-                `
+                    </div> `
             },
             ue22: {
                 title: "UE2 - Déployer des systèmes industriels",
                 body: `
-                    <h1>Semestre 1</h1>
-                    <h3>Ressources</h3>
+                    <h1>Composantes Essentielles</h1>
                     <div class="accordion">
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.01 - Anglais et Communication
+                                CE2.01 : En se protégeant des risques liés au milieu industriel.
                                 <span class="accordion-icon">+</span>
                             </button>
+
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE2.03</span>
-                                </div>
-                                <p>Les activités que l'on a réalisé dans cette ressource notamment les présentations orales et écrites
-                                m'ont permis de fluidifier mon discours ce qui est permet de présenter des projets et solutions
-                                et d'expliquer devant une personne parlant l'anglais le fonctionnement des mes projets
-                                par exemple un projet d'automatisation. Pour l'écrit, je suis capable de rédiger une notice d'utilisation
-                                ou un Readme ou même une affiche en anglais. 
-                                J'ai un niveau B2 en anglais, je suis capable d'avoir une conversation
-                                en anglais, je comprend une très grande majorité de ce que je lis et entends en anglais.</p>
+                                <p></p>  
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.03 - Maths pour l'IT
+                                CE2.02 : En respectant les procédures QHSSE de l'entreprise.
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Je maîtrise le calcul des probabilités et les mathématiques discrètes mais j'ai 
-                                encore du mal avec les opérations matricielles et l'algèbre
-                                linéaire ainsi que la résolution des équations différentielles.</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                            R1.05 - Physique Appliquée
+                                CE2.03 : En communication en français et en anglais avec les différents acteurs impliqués.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                            
+                                <p></p>
+                            </div>
+                        </div>
+
+
+                    <h1>Apprentissages Critiques</h1>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC12.01 : Valider le fonctionnement d'une solution d'automatisme ou de robotique en atelier (FAT).
+                                correspondant à l'installation existante d'un client ou à un projet en cours.
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>...</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.07 - Programmation, Algorithmique
+                                AC12.02 : Configurer les entrées et sorties d'une solution d'automatisme ou de robotique.
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Les différentes activités réalisées en Python m'ont permis de comprendre comment développer, 
-                                tester et mettre en œuvre une application fonctionnelle, ce qui constitue une base 
-                                importante pour le déploiement de solutions industrielles numériques. J'ai pu acquérir les 
-                                bases de la programmation en python ce qui me permet de déployer des programmes que j'ai conçu</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.09 - Initiation aux réseaux
+                                AC12.03 : Raccorder les entrées et sorties d'une solution d'automatisme ou de robotique et 
+                                vérifier le bon fonctionnement des chaînes d'information ou d'action. (synchronisations)
                                 <span class="accordion-icon">+</span>
                             </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
+                            <div class="accordion-content">                              
+                                <p></p>
                             </div>
-                        </div>
+                        </div>     
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC12.04 : Analyser l'architecture réseau d'un client dans le but d'intégrer un composant 
+                                d'automatisme ou de robotique.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div> 
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.13 - Initiation à l'Intelligence Artificielle
+                                AC12.05 : Valider le fonctionnement d'une solution d'automatisme / de robotique sur site (SAT).
                                 <span class="accordion-icon">+</span>
                             </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div> 
+
+
+                    <h1>Situations Professionnelles</h1>   
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Mise en service d'une solution d'automatisme ou de robotique.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
                             </div>
                         </div>    
-                    </div>
-                    <h3>SAE1.2 - Apprendre à câbler les capteurs et actionneurs</h3>
-                    <div class="tags">
-                        <span class="tag">CE1.01</span>
-                        <span class="tag">CE1.02</span>
-                        <span class="tag">CE1.03</span>
-                        <span class="tag">CE1.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">AC11.01</span>
-                        <span class="tag">AC11.02</span>
-                        <span class="tag">AC11.03</span>
-                        <span class="tag">AC11.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.</span>
-                    </div> 
-                    <h1>Semestre 2</h1>
-                    <h3>Ressources</h3>
+                        <br>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Mise en service d'une supervision ou d'un système de contrôle commande.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div>  
+                        <br>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Mise en place et paramétrage d'une infrastructure réseau.
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">                              
+                                <p></p>
+                            </div>
+                        </div>  
 
+                    <h1>Saé</h1>
                     <div class="accordion">
-                        <div class="accordion-item">
+                        <div class="accordion-item sae">
                             <button class="accordion-btn">
-                                R2.01 - Anglais et communication
+                                SAE1.2 - Apprendre à câbler les capteurs et actionneurs
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE2.03</span>
-                                </div>
-                                <p>Ton texte ici...</p>
+                                ... contenu ...
                             </div>
                         </div>
 
-                        <div class="accordion-item">
+                        <div class="accordion-item sae">
                             <button class="accordion-btn">
-                                R2.04 - Maths pour l'OT
+                                SAE 2.1 - Conception et déploiement d'une solution d'automatisme
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
+                                ... contenu ...
                             </div>
                         </div>
 
-                        <div class="accordion-item">
+
+
+                    
+                        <div class="accordion-item sae">
                             <button class="accordion-btn">
-                                R2.05 - Physique: Domaine Fréquentiel et filtrage
+                                SAE 2.2 - Mise en service et déploiement d'une solution de robotique
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.06 - Puissances et schéma de liaison à la terre
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.07 - Programmation Orientée Objet
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.09 - Bases des services réseaux
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
+                                ... contenu ...
                             </div>
                         </div>
 
-                        <div class="accordion-item">
+                    
+                        <div class="accordion-item sae">
                             <button class="accordion-btn">
-                                R2.10 - Réseaux Télécommunications
+                                SAE 2.4 - Amélioration de la production
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
+                                ... contenu ...
                             </div>
                         </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.18 - Commande en BF des procédés
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.21 - Approche pratique de la robotique industrielle
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>                        
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.22 - Robotique: Vision industrielle
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h3>SAE 2.1 - Conception et déploiement d'une solution d'automatisme</h3>
-
-                    <h3>SAE 2.2 - Mise en service et déploiement d'une solution de robotique</h3>
-                    <div class="tags">
-                        <span class="tag">CE1.01</span>
-                        <span class="tag">CE1.02</span>
-                        <span class="tag">CE1.03</span>
-                        <span class="tag">CE1.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">AC11.01</span>
-                        <span class="tag">AC11.02</span>
-                        <span class="tag">AC11.03</span>
-                        <span class="tag">AC11.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.</span>
-                        <span class="tag">Conseil à un client dans le but de lui permettre d'améliorer sa productivité et de la faire évoluer vers une industrie 4.0 ou 5.0.</span>
-                    </div> 
-                    <h3>SAE 2.4 - Amélioration de la production</h3>
-                    <div class="tags">
-                        <span class="tag">CE1.01</span>
-                        <span class="tag">CE1.02</span>
-                        <span class="tag">CE1.03</span>
-                        <span class="tag">CE1.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">AC11.01</span>
-                        <span class="tag">AC11.02</span>
-                        <span class="tag">AC11.03</span>
-                        <span class="tag">AC11.04</span>
-                    </div>
-                    <div class="tags">
-                        <span class="tag">Conception d'une application d'automatisme ou de robotique, en réponse à un cahier des charges.</span>
-                        <span class="tag">Conseil à un client dans le but de lui permettre d'améliorer sa productivité et de la faire évoluer vers une industrie 4.0 ou 5.0.</span>
-                    </div> 
-
-                    <br>
-                    <h3>Objectifs</h3>
-                    <p>Ex : Analyser un cahier des charges, modéliser un système, ...</p>
-                    <br>
-                    <h3>Compétences acquises</h3>
-                    <ul style="padding-left: 1.5rem; list-style: disc;">
-                        <li>Compétence 1</li>
-                        <li>Compétence 2</li>
-                    </ul>
-                
+                    </div>                
                 `
 
             },
             ue23: {
                 title: "UE3 - Maintenir et gérer des systèmes industriels",
                 body: `
-                    <h1>Semestre 1</h1>
-                    <h3>Ressources</h3>
+                    <h1>Composantes Essentielles</h1>
                     <div class="accordion">
-
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.01 - Anglais et Communication
+                                CE3.01 : En se protégeant des risques liés au milieu industriel
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE3.04</span>
-                                </div>
-                                <p>Étant donnée que l'anglais est la langue universelle, presque tout en informatique est en anglais,
-                                les langages de programmation, les commandes dans le terminal, les notices d'utilisation et "Readme",...
-                                il est primordiale de comprendre l'anglais pour bien comprendre ce qui se passe. Ici j'ai pu 
-                                élargir mon vocabulaire en anglais. J'ai un niveau B2 en anglais, je suis capable d'avoir une conversation
-                                en anglais, je comprend une très grande majorité de ce que je lis et entends en anglais.</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.03 - Maths pour l'IT
+                                CE3.02 : En respectant les procédures QHSSE
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Je maîtrise le calcul des probabilités et les mathématiques discrètes mais j'ai 
-                                encore du mal avec les opérations matricielles et l'algèbre
-                                linéaire ainsi que la résolution des équations différentielles.</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                            R1.05 - Physique Appliquée
+                                CE3.03 : En assurant la traçabilité des opérations
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Dans ce module, j'ai appris les bases de la physique appliquée en circuit électriques,
-                                j'ai notamment appris comment fonctionnent les composants de bases d'un circuit électrique et ce 
-                                qu'il se passe à l'interieur, connaître les lois générales, le fonctionnement des diodes, 
-                                des transistors et des condensateurs me permet de détecter lorsque qu'un câblage est mal 
-                                réalisé et de l'ajuster en conséquence.</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.07 - Programmation, Algorithmique
+                                CE3.04 : En communiquant en français et en anglais avec les différents acteurs impliqués.
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>La pratique régulière du débogage et de la correction d'erreurs lors des exercices 
-                                et du projet m'a aidé à acquérir une méthodologie de diagnostic et de maintenance, 
-                                utile pour assurer le bon fonctionnement des systèmes industriels. J'ai pu acquérir les bases 
-                                de la programmation python, j'ai encore 
-                                du mal à comprendre précisement la plupart des codes que je vois mais je parviens tout de 
-                                même à comprendre sa/ses fonction(s) principale(s) afin de le modifier, simplifier 
-                                ou le mettre à jour.</p>
+                                <p></p>
+                            </div>
+                        </div>                       
+
+                        <h1>Apprentissages Critiques</h1>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC13.01 : Effectuer la vérification métrologique d'un instrument de mesure.        
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.13 - Initiation à l'Intelligence Artificielle
+                                AC13.02 : Déterminer la durée de vie d'un actionneur, ou d'une pièce d'usure
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
                                 <p>Ton texte ici...</p>
                             </div>
-                        </div>      
+                        </div>   
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC13.03 : Gérer les documents de suivi des instruments                         
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div>                          
+                        
+                        <h1>Situations Professionnelles</h1>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Maintenance systématique des instruments de production.                       
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Maintenance prédictive des instruments de production (industrie 4.0).                         
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Mise en place de solution de monitoring.                       
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div>                        
+
                     </div>
                     <h3>SAE1.4 - Maintenance et gestion du code</h3>
-                    <h1>Semestre 2</h1>
-                    <h3>Ressources</h3>
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.01 - Anglais et communication
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE3.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.04 - Maths pour l'OT
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.05 - Physique: Domaine Fréquentiel et filtrage
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.06 - Puissances et schéma de liaison à la terre
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.07 - Programmation Orientée Objet
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.13 - IA, Apprentissage supervisé
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.22 - Robotique: Vision industrielle
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                    </div>
 
                     <h3>SAE 2.3 - Mise en place de mesures de réduction des risques en lien avec la dangerosité du procédé de fabrication</h3>
 
@@ -1908,137 +1543,133 @@
             ue24: {
                 title: "UE4 - Sécuriser des systèmes industriels",
                 body: `
-                    <h1>Semestre 1</h1>
-                    <h3>Ressources</h3>
+                    <h1>Composantes Essentielles</h1>
                     <div class="accordion">
-
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.01 - Anglais et Communication
+                                CE4.01 : En mesurant et analysant les risques
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                </div>
-                                <p>Étant donnée que l'anglais est la langue universelle, presque tout en informatique est en anglais,
-                                les langages de programmation, les commandes dans le terminal, les notices d'utilisation et "Readme",...
-                                il est primordiale de comprendre l'anglais pour bien comprendre ce qui se passe. Ici j'ai pu 
-                                élargir mon vocabulaire en anglais. J'ai un niveau B2 en anglais, je suis capable d'avoir 
-                                une conversation en anglais, je comprend une très grande majorité de ce que je lis et entends en anglais.</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.03 - Maths pour l'IT
+                                CE4.02 : En respectant les normes et le cadre juridique
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Dans cette ressource j'ai pu apprendre à convertir des valeurs binaires et hexadécimales 
-                                en valeurs décimales et inversément puis d'appliquer ceci en codage UTF-8 qui permet de traduire
-                                une valeur binaire en un caractère informatique au format 8 bits. Ceci me permet de 
-                                comprendre la manière dont les données sont stockées, transmises et interprétées par les 
-                                systèmes numériques. Ces connaissances constituent également une 
-                                base importante en cybersécurité, car elles facilitent l'analyse de données brutes, 
-                                la compréhension des échanges réseau, l'identification d'éventuelles anomalies dans les données
-                                et l'étude de certaines techniques d'encodage utilisées lors
-                                des attaques ou des mécanismes de protection des systèmes d'information. 
-                                De plus, les notions de probabilités et traitement de données m'ont permis de mieux comprendre
-                                les méthodes utilisées pour détecter des failles et des comportements anormaux. Je maîtrise 
-                                le calcul des probabilités mais j'ai encore du mal avec les opérations matricielles et l'algèbre
-                                linéaire ainsi que la résolution des équations différentielles.</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                            R1.05 - Physique Appliquée
+                                CE4.03 : En intégrant les dernières technologies  
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Dans ce module j'ai appris comment fonctionnent les circuits électriques notamment les lois 
-                                générales, le fonctionnement des diodes, des transistors et des condensateurs.
-                                Ces connaissances m'ont permis de visualiser comment les informations passent physiquement dans un système
-                                informatique et sont éssentielles en cybersécurité en particulier au niveau matériel
-                                afin de repérer les failles matérielles et de se protéger des attaques "hardware".</p>
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.07 - Programmation, Algorithmique
+                                CE4.04 : En sensibilisant efficacement les acteurs concernés
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>L'apprentissage de bonnes pratiques de programmation, telles que la gestion des entrées 
-                                utilisateur et la prévention des erreurs d'exécution, m'a sensibilisé à l'importance de 
-                                la fiabilité et de la sécurité des applications, des aspects essentiels dans les systèmes 
-                                industriels modernes. J'ai pu acquérir les bases de la programmation python, j'ai encore 
-                                du mal à comprendre précisement la plupart des codes que je vois mais je parviens tout de 
-                                même à comprendre sa/ses fonction(s) principale(s).</p>
+                                <p></p>
+                            </div>
+                        </div>                       
+
+                        <h1>Apprentissages Critiques</h1>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC14.01 : Identifier les risques liés au procédé de fabrication.        
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p></p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.09 - Initiation aux réseaux
+                                AC14.02 : Se protéger des risques électriques.
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Grâce à cette ressource, j'ai été initié à l'administration d'un OS linux, j'ai donc
-                                acquis des bases dans ce domaine à travers des cours et des TP, de plus j'ai appris le 
-                                fonctionnement de l'adressage IP, du modèle OSI et également les protocoles ARP, TCP, UDP, IP, ICMP,
-                                FTP et HTTP. J'ai également appris à lire leurs trames respectives. </br>
-                                Ces connaissances contribuent directement aux bonnes pratiques en cybersécurité, 
-                                car elles permettent de mieux comprendre le fonctionnement des systèmes et des communications
-                                réseau. Elles facilitent l'identification d'anomalies, la détection d'activités suspectes, 
-                                le diagnostic d'incidents de sécurité et la mise en place de mesures de protection adaptées.
-                                La maîtrise de Linux, largement utilisé dans les infrastructures informatiques et les outils
-                                de cybersécurité, constitue également un atout important pour administrer des systèmes de 
-                                manière sécurisée, appliquer les principes de moindre privilège, gérer les accès et renforcer
-                                la sécurité des équipements et des services réseau. Cependant, je ne maîtrise pas totalement 
-                                tout les protocoles et je ne suis pas encore entièrement autonome lors de l'administration de 
-                                l'OS linux, j'ai donc encore beaucoup de progrès à réaliser pour réellement maîtriser ce domaine.
-                                </p>
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div>   
+
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC14.03 : Connaître les principaux types d'attaque informatique                         
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div>                          
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                AC14.04 : Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité                         
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div>   
+                        <h1>Situations Professionnelles</h1>
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Mise en place de mesures de réduction des risques en lien avec la dangerosité du procédé de fabrication.                      
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
                             </div>
                         </div>
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                R1.11 - Cybersécurité, Hygiène Informatique
+                                Assurer la cybersécurité de la ligne de production.                      
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>La sensibilisation à la cybersécurité m'a permis de mieux comprendre l'importance 
-                                    des bonnes pratiques de sécurité informatique. Grâce aux cours et aux travaux pratiques 
-                                    utilisant des outils tels que Nmap, Hydra et John the Ripper, j'ai découvert les principales
-                                    méthodes employées pour identifier des vulnérabilités et compromettre des systèmes
-                                    numériques. Ces connaissances m'ont permis de mieux appréhender les risques liés à la
-                                    sécurité des systèmes d'information et les mesures à mettre en œuvre pour les réduire, 
-                                    tout en étant conscient que le risque zéro n'existe pas. 
-
-                                    </p>
+                                <p>Ton texte ici...</p>
                             </div>
-                        </div>        
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Analyse de l'existant et étude des besoins de sécurité                       
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div> 
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-btn">
+                                Évolution et mise en conformité de l'installation d'une entreprise                       
+                                <span class="accordion-icon">+</span>
+                            </button>
+                            <div class="accordion-content">
+                                <p>Ton texte ici...</p>
+                            </div>
+                        </div> 
+
                     </div>
 
-                    <h3>SAE1.1 - Bonnes pratiques de la cybersécurité</h3>
+                    <h1>Saé</h1>
+                    SAE1.1 - Bonnes pratiques de la cybersécurité
 
                     <div style="text-align: center; margin: 2rem 0;">
                         <div class="img-card" style="display: inline-block;">
@@ -2046,102 +1677,6 @@
                             <img src="INEVOBLUD.png" alt="Description"
                             onclick="openLightbox(this.src)"
                             style="cursor: zoom-in;">
-                        </div>
-                    </div>
-
-                    <h1>Semestre 2</h1>
-                    <h3>Ressources</h3>
-
-                    <div class="accordion">
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.01 - Anglais et communication
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.01</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.04 - Maths pour l'OT
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.05 - Physique: Domaine Fréquentiel et filtrage
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.06 - Puissances et schéma de liaison à la terre
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.07 - Programmation Orientée Objet
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.21 - Approche pratique de la robotique industrielle
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
-                        </div>
-                        
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                R2.22 - Robotique: Vision industrielle
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="tags">
-                                    <span class="tag">CE1.04</span>
-                                </div>
-                                <p>Ton texte ici...</p>
-                            </div>
                         </div>
                     </div>
 
@@ -2156,8 +1691,6 @@
                         <li>Compétence 1</li>
                         <li>Compétence 2</li>
                     </ul>
-                                
-                
                 `
             }
         };
@@ -2166,6 +1699,8 @@
             const skill = skillsData[id];
             document.getElementById('skill-title').textContent = skill.title;
             document.getElementById('skill-body').innerHTML = skill.body;
+            slideIndex = 1;
+            showDivs(slideIndex);
             const overlay = document.getElementById('skill-overlay');
             overlay.style.display = 'block';
             overlay.scrollTop = 0;
@@ -2247,6 +1782,22 @@
             starsContainer.appendChild(star);
         }
     
+        var slideIndex = 1;
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function showDivs(n) {
+            var x = document.getElementsByClassName("mySlides");
+            if (x.length === 0) return;
+            if (n > x.length) { slideIndex = 1; }
+            if (n < 1) { slideIndex = x.length; }
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            x[slideIndex - 1].style.display = "block";
+        }
 
     </script>
 
