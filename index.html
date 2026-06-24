@@ -738,6 +738,18 @@
         .accordion-item.sae.active {
             border-color: #d97706;
         }
+
+        /* Accordéons imbriqués : fermés par défaut même si le parent est ouvert */
+        .accordion-content .accordion-item .accordion-content {
+            max-height: 0;
+            padding: 0 1.5rem;
+        }
+
+        .accordion-content .accordion-item.active .accordion-content {
+            max-height: 10000px;
+            padding: 0 1.5rem 1.2rem;
+        }
+
     </style>
 </head>
 <body>
@@ -1167,6 +1179,9 @@ const skillsData = {
                                     de code opérationnelles, notamment à travers la création de Grafcets de conduite et la 
                                     gestion rigoureuse des entrées/sorties (boutons-poussoirs, voyants, capteurs) pour coordonner 
                                     l'ensemble du cycle.</p>
+                                    <video width="100%" controls style="border-radius: 8px;">
+                                        <source src="niryo.mp4" type="video/mp4">
+                                    </video>
                             </div>
                         </div> 
 
@@ -1207,6 +1222,14 @@ const skillsData = {
                                     (payload). Sur le terrain, je planifie et configure des trajectoires fluides et sécurisées 
                                     directement sur les interfaces industrielles, avec une excellente maîtrise de TPE-B (Fanuc) et 
                                     une bonne pratique de PolyScope (Universal Robots).</p>
+                            <div style="text-align: center; margin; 1rem 0;">
+                                <div class="img-card" style="display: inline-block;">
+                                    <p class="img-title">Visualisation de la portée du robot sur Roboguide</p>
+                                    <img src="roboguide.png" alt="Description"
+                                    onclick="openLightbox(this.src)"
+                                    style="cursor: zoom-in;">
+                                </div>
+                            </div>
                             </div>
                         </div> 
 
@@ -1218,9 +1241,138 @@ const skillsData = {
                             </button>
                             <div class="accordion-content">                              
                                 <p></p>
+                            <div class="accordion" style="margin-top: 1rem;">
+
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAE1.3 - Conception d'une application d'automatisation ou de robotique
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">                      
+                                        <h4>Objectifs</h4>
+                                        <ul style="padding-left: 1.5rem; list-style: disc;">
+                                            <li>Conception d'un robot démonstrateur</li>
+                                            <li>Le démonstrateur devra prendre en compte les différents aspects de la formation</li>
+                                            <li>Complémentarité IT & OT</li>
+                                            <li>Projet innovant et interactif</li>
+                                        </ul>
+
+                                        <div style="text-align: center; margin: 2rem 0;">
+                                            <div class="img-card" style="display: inline-block;">
+                                                <p class="img-title">Notre projet : Robot joueur de poker, Rob'em</p>
+                                                <img src="robem.jpg" alt="Description"
+                                                onclick="openLightbox(this.src)"
+                                                style="cursor: zoom-in;">
+                                            </div>
+                                        </div>
+                                        Notre groupe était composé de 6 personnes, nous avons choisi après un brainstorming de concevoir un robot qui joue au poker. <br>                     
+                                        Description du projet :
+                                        Le robot niryo Ned2 est positionné sur un côté du plateau de jeu, il a à sa portée ses propres cartes et jetons,
+                                        le centre du plateau ou sont posées les cartes du board, et sa caméra. 
+                                        Comment il fonctionne ? Lors du premier tour, il prend ses cartes grâce à sa ventouse et les emmène au dessus
+                                        de la caméra afin de reconnaître et mémoriser sa main, ensuite il regarde les cartes du board grâce à sa caméra 
+                                        positionnée sur son bras, puis la partie se déroule comme une partie de poker classique et à chaque tour il 
+                                        regarde les nouvelles cartes dévoilées sur le board et calcul ses chances de gagner et peut même bluffer de façon aléatoire.
+                                        On s'est donc répartit les tâches.
+                                        Les tâches qui m'ont été confiées étaient : 
+                                        <ul style="padding-left: 1.5rem; list-style: disc;">
+                                            <li>Conception 3D du plateau de jeu, du support de la caméra et du support des cartes</li>
+                                            <li>Conception de l'affiche de présentation du démonstrateur</li>
+                                        </ul>
+                                        Durant ce projet, j'ai pu peaufiner mes compétences de modélisations 3D sur le logiciel 
+                                        Solidworks, j'ai appris à imprimer mes pièces à l'imprimante 3D et découper des pièces à la découpe laser.
+                                        Et j'ai pu développer mes premières compétences en languages Python
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAE 2.1 - Conception et déploiement d'une solution d'automatisme
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+
+                                        <div class="w3-content w3-display-container" style="text-align: center; margin: 2rem 0;">
+                                            <div class="img-card" style="display: inline-block;">
+                                                <img class="mySlides" src="sae21_affiche.png" alt="Description"
+                                                onclick="openLightbox(this.src)"
+                                                style="cursor: zoom-in; display: block;">
+                                                
+                                                <img class="mySlides" src="detection_laser.png" alt="Description"
+                                                onclick="openLightbox(this.src)"
+                                                style="cursor: zoom-in; display: none;">
+
+                                                <img class="mySlides" src="schema2.1.png" alt="Description"
+                                                onclick="openLightbox(this.src)"
+                                                style="cursor: zoom-in; display: none;">
+                                            </div>
+                                            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)">&#10094;</button>
+                                            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)">&#10095;</button>
+                                        </div>
+                                        <div class="w3-panel w3-round-large">
+                                            <h4>Objectifs :</h4>
+                                            <ul style="padding-left: 1.5rem; list-style: disc;">
+                                                <li>Réaliser un système capable de mesurer la rectitude du profilé directement sur la machine qui a
+                                                réalisé l'usinage.</li>
+                                                <li>La mesure de rectitude devra pouvoir être mesurée directement par l'opérateur au travers d'une IHM.
+                                                A la fin de la mesure, la valeur maximale mesurée devra pouvoir être affichée à l'écran.</li>
+                                                <li>Les différentes valeur maximales mesurées devront pouvoir être stockées soit localement, soit sur
+                                                un serveur distant. Chaque entrée devra comporter la date et l'heure de la mesure, la référence de la
+                                                pièce et la mesure en mm.</li>
+                                            </ul>
+                                            Lors de ce projet, j'ai effectué des schémas électriques ainsi que le câblage des moteurs
+                                            pas à pas, du laser et du capteur de luminosité, des modélisations 3D des supports du laser et du capteur, 
+                                            la programmation en C++ d'un capteur de luminosité qui récupère une valeur analogique de l'intensité 
+                                            lumineuse et qui la convertit en valeur booléenne lorsqu'elle atteint un seuil élevé ce qui signifie que 
+                                            la lumière du laser touche le capteur, j'ai aussi appris à dénuder des câbles et à les souder. 
+                                            Ce projet m'a permis de me rappeler des notions en C++ que j'ai apprises lors de mon année de terminale STI2D.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAE 2.2 - Mise en service et déploiement d'une solution de robotique
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">                    
+                                            
+                                        <div style="text-align: center; margin: 2rem 0;">
+                                            <div class="img-card" style="display: inline-block;">
+                                                <p class="img-title">Notre projet : </p>
+                                                <video width="100%" controls style="border-radius: 8px;">
+                                                    <source src="fanuc.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                        </div>
+                                        <div class="w3-panel w3-round-large">
+                                            Ce projet était divisé en 2 parties, la première étant la simulation de la presse à injection 
+                                            et la deuxième la programmation du robot et la conception de son préhenseur. Étant donné que notre 
+                                            groupe était composé de 6 personnes, nous avions décidé de nous séparer en 2 "sous-groupes", j'ai donc 
+                                            choisi avec mon groupe de travailler sur le robot. J'ai principalement travaillé sur la réalisation des 
+                                            Graphcets et des programmes nécessaires pour le fonctionnement du robot et du vérin ainsi que le capteur magnétique, 
+                                            les boutons poussoirs et les voyants. Dans ce projet j'ai beaucoup progressé 
+                                            dans la programmation des robots Fanuc notamment dans la navigation sur l'interface du teach pendant et dans la programmation des entrées/sorties. 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAE 2.4 - Conception et maintenance d'une solution permettant d'améliorer la productivité d'un client
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        
+                                    </div>
+                                </div>
+
+
                             </div>
-                        </div>    
+                            </div>
+                        </div>  
+
                         <br>
+
                         <div class="accordion-item">
                             <button class="accordion-btn">
                                 Conseil à un client dans le but de lui permettre d'améliorer sa productivité 
@@ -1231,132 +1383,6 @@ const skillsData = {
                                 <p></p>
                             </div>
                         </div>    
-
-                    <h1>Saé</h1>
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAE1.3 - Conception d'une application d'automatisation ou de robotique
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">                      
-                                <h4>Objectifs</h4>
-                                <ul style="padding-left: 1.5rem; list-style: disc;">
-                                    <li>Conception d'un robot démonstrateur</li>
-                                    <li>Le démonstrateur devra prendre en compte les différents aspects de la formation</li>
-                                    <li>Complémentarité IT & OT</li>
-                                    <li>Projet innovant et interactif</li>
-                                </ul>
-
-                                <div style="text-align: center; margin: 2rem 0;">
-                                    <div class="img-card" style="display: inline-block;">
-                                        <p class="img-title">Notre projet : Robot joueur de poker, Rob'em</p>
-                                        <img src="robem.jpg" alt="Description"
-                                        onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in;">
-                                    </div>
-                                </div>
-                                Notre groupe était composé de 6 personnes, nous avons choisi après un brainstorming de concevoir un robot qui joue au poker. <br>                     
-                                Description du projet :
-                                Le robot niryo Ned2 est positionné sur un côté du plateau de jeu, il a à sa portée ses propres cartes et jetons,
-                                le centre du plateau ou sont posées les cartes du board, et sa caméra. 
-                                Comment il fonctionne ? Lors du premier tour, il prend ses cartes grâce à sa ventouse et les emmène au dessus
-                                de la caméra afin de reconnaître et mémoriser sa main, ensuite il regarde les cartes du board grâce à sa caméra 
-                                positionnée sur son bras, puis la partie se déroule comme une partie de poker classique et à chaque tour il 
-                                regarde les nouvelles cartes dévoilées sur le board et calcul ses chances de gagner et peut même bluffer de façon aléatoire.
-                                On s'est donc répartit les tâches.
-                                Les tâches qui m'ont été confiées étaient : 
-                                <ul style="padding-left: 1.5rem; list-style: disc;">
-                                    <li>Conception 3D du plateau de jeu, du support de la caméra et du support des cartes</li>
-                                    <li>Conception de l'affiche de présentation du démonstrateur</li>
-                                </ul>
-                                Durant ce projet, j'ai pu peaufiner mes compétences de modélisations 3D sur le logiciel 
-                                Solidworks, j'ai appris à imprimer mes pièces à l'imprimante 3D et découper des pièces à la découpe laser.
-                                Et j'ai pu développer mes premières compétences en languages Python
-                            </div>
-                        </div>
-
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                <h4>SAE 2.1 - Conception et déploiement d'une solution d'automatisme</h4>
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-
-                                <div class="w3-content w3-display-container" style="text-align: center; margin: 2rem 0;">
-                                    <div class="img-card" style="display: inline-block;">
-                                        <img class="mySlides" src="sae21_affiche.png" alt="Description"
-                                        onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in; display: block;">
-                                        
-                                        <img class="mySlides" src="detection_laser.png" alt="Description"
-                                        onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in; display: none;">
-
-                                        <img class="mySlides" src="schema2.1.png" alt="Description"
-                                        onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in; display: none;">
-                                    </div>
-                                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)">&#10094;</button>
-                                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)">&#10095;</button>
-                                </div>
-                                <div class="w3-panel w3-round-large">
-                                    <h4>Objectifs :</h4>
-                                    <ul style="padding-left: 1.5rem; list-style: disc;">
-                                        <li>Réaliser un système capable de mesurer la rectitude du profilé directement sur la machine qui a
-                                        réalisé l'usinage.</li>
-                                        <li>La mesure de rectitude devra pouvoir être mesurée directement par l'opérateur au travers d'une IHM.
-                                        A la fin de la mesure, la valeur maximale mesurée devra pouvoir être affichée à l'écran.</li>
-                                        <li>Les différentes valeur maximales mesurées devront pouvoir être stockées soit localement, soit sur
-                                        un serveur distant. Chaque entrée devra comporter la date et l'heure de la mesure, la référence de la
-                                        pièce et la mesure en mm.</li>
-                                    </ul>
-                                    Lors de ce projet, j'ai effectué des schémas électriques ainsi que le câblage des moteurs
-                                    pas à pas, du laser et du capteur de luminosité, des modélisations 3D des supports du laser et du capteur, 
-                                    la programmation en C++ d'un capteur de luminosité qui récupère une valeur analogique de l'intensité 
-                                    lumineuse et qui la convertit en valeur booléenne lorsqu'elle atteint un seuil élevé ce qui signifie que 
-                                    la lumière du laser touche le capteur, j'ai aussi appris à dénuder des câbles et à les souder. 
-                                    Ce projet m'a permis de me rappeler des notions en C++ que j'ai apprises lors de mon année de terminale STI2D.
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAE 2.2 - Mise en service et déploiement d'une solution de robotique
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">                    
-                                    
-                                <div style="text-align: center; margin: 2rem 0;">
-                                    <div class="img-card" style="display: inline-block;">
-                                        <p class="img-title">Notre projet : </p>
-                                        <video width="100%" controls style="border-radius: 8px;">
-                                            <source src="fanuc.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="w3-panel w3-round-large">
-                                    Ce projet était divisé en 2 parties, la première étant la simulation de la presse à injection 
-                                    et la deuxième la programmation du robot et la conception de son préhenseur. Étant donné que notre 
-                                    groupe était composé de 6 personnes, nous avions décidé de nous séparer en 2 "sous-groupes", j'ai donc 
-                                    choisi avec mon groupe de travailler sur le robot. J'ai principalement travaillé sur la réalisation des 
-                                    Graphcets et des programmes nécessaires pour le fonctionnement du robot et du vérin ainsi que le capteur magnétique, 
-                                    les boutons poussoirs et les voyants. Dans ce projet j'ai beaucoup progressé 
-                                    dans la programmation des robots Fanuc notamment dans la navigation sur l'interface du teach pendant et dans la programmation des entrées/sorties. 
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAE 2.4 - Conception et maintenance d'une solution permettant d'améliorer la productivité d'un client
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                
-                            </div>
-                        </div>
-
                     </div> `
             },
             ue2: {
@@ -2053,11 +2079,22 @@ const skillsData = {
             overlay.appendChild(document.getElementById('stars'));
             overlay.appendChild(document.getElementById('clouds'));
 
-            // Accordéon : toggle sur le cliqué uniquement
             document.querySelectorAll('#skill-body .accordion-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
                     const item = btn.parentElement;
-                    item.classList.toggle('active');
+                    const isActive = item.classList.contains('active');
+                    const parent = item.parentElement;
+
+                    // Ferme uniquement les frères du même niveau
+                    parent.querySelectorAll(':scope > .accordion-item').forEach(i => {
+                        i.classList.remove('active');
+                    });
+
+                    // Ouvre le cliqué si il était fermé
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
                 });
             });
         }
