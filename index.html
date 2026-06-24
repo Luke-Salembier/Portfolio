@@ -1092,6 +1092,28 @@ const skillsData = {
                                     électrique afin d'intervenir sur une installation de manière globale et sécurisée. En résumé
                                     je maîtrise les bases de la lecture des ces différents documents, je dois donc encore
                                     progresser pour comprendre l'intégralité des schémas notamment sur des systèmes plus complexes.</p>
+
+                                <div class="w3-content w3-display-container" style="text-align: center; margin: 2rem 0;">
+                                    <div class="img-card" style="display: inline-block;">
+                                        <img class="mySlides" src="bf.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in; display: block;">
+                                        
+                                        <img class="mySlides" src="bo.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in; display: none;">
+
+                                        <img class="mySlides" src="meca.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in; display: none;">
+
+                                        <img class="mySlides" src="plan_meca.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in; display: none;">                                        
+                                    </div>
+                                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)">&#10094;</button>
+                                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)">&#10095;</button>
+                                </div>                                    
                             </div>
                         </div>
 
@@ -1160,7 +1182,7 @@ const skillsData = {
                                     dans le TP sur la colorimétrie en vision industrielle ou j'ai pu également toucher aux composantes
                                     HSV pour la reconnaissance des couleurs selon la teinte par exemple. <br>
                                     Pour l'IA, j'ai découvert les diférents modèles d'IA utilisés dans l'industrie, leurs paramètres,
-                                    et leur utilisation. Je sais choisir le modèle d'IA adapté à une situation et les adapter en 
+                                    et leur utilisation. Je sais choisir le modèle d'IA adapté à une situation et les paramétrer en 
                                     utilisant la librairie scikit-learn sur python. <br>
                                     J'ai pu peaufiner mes connaissances lors de la SAE2.4 ou j'ai pu revoir toute ces notions de manière 
                                     plus approfondi. Je considère que je maîtrise assez bien le traitement de l'image mais pas assez
@@ -1264,18 +1286,18 @@ const skillsData = {
                                     <div class="img-card" style="display: inline-block;">
                                         <img class="mySlides" src="sae21_affiche.png" alt="Description"
                                         onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in;">
+                                        style="cursor: zoom-in; display: block;">
                                         
                                         <img class="mySlides" src="detection_laser.png" alt="Description"
                                         onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in;">
+                                        style="cursor: zoom-in; display: none;">
 
                                         <img class="mySlides" src="schema2.1.png" alt="Description"
                                         onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in;">
+                                        style="cursor: zoom-in; display: none;">
                                     </div>
-                                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
-                                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+                                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)">&#10094;</button>
+                                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)">&#10095;</button>
                                 </div>
                                 <div class="w3-panel w3-round-large">
                                     <h4>Objectifs :</h4>
@@ -1528,8 +1550,40 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                ... contenu ...
+                                <div class="w3-content w3-display-container" style="text-align: center; margin: 2rem 0;">
+                                    <div class="img-card" style="display: inline-block;">
+                                        <img class="mySlides" src="sae21_affiche.png" alt="Description"
+                                        onclick="openLightbox(this.src)"
+                                        style="cursor: zoom-in; display: block;">
+                                        
+                                        <video class="mySlides" width="100%" controls style="border-radius: 8px;">
+                                            <source src="sae2.1.mp4" type="video/mp4">
+                                        </video>
+
+                                    </div>
+                                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)">&#10094;</button>
+                                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)">&#10095;</button>
+                                </div>
+                                <div class="w3-panel w3-round-large">
+                                    <h4>Objectifs :</h4>
+                                    <ul style="padding-left: 1.5rem; list-style: disc;">
+                                        <li>Réaliser un système capable de mesurer la rectitude du profilé directement sur la machine qui a
+                                        réalisé l'usinage.</li>
+                                        <li>La mesure de rectitude devra pouvoir être mesurée directement par l'opérateur au travers d'une IHM.
+                                        A la fin de la mesure, la valeur maximale mesurée devra pouvoir être affichée à l'écran.</li>
+                                        <li>Les différentes valeur maximales mesurées devront pouvoir être stockées soit localement, soit sur
+                                        un serveur distant. Chaque entrée devra comporter la date et l'heure de la mesure, la référence de la
+                                        pièce et la mesure en mm.</li>
+                                    </ul>
+                                    Lors de ce projet, j'ai effectué des schémas électriques ainsi que le câblage des moteurs
+                                    pas à pas, du laser et du capteur de luminosité, des modélisations 3D des supports du laser et du capteur, 
+                                    la programmation en C++ d'un capteur de luminosité qui récupère une valeur analogique de l'intensité 
+                                    lumineuse et qui la convertit en valeur booléenne lorsqu'elle atteint un seuil élevé ce qui signifie que 
+                                    la lumière du laser touche le capteur, j'ai aussi appris à dénuder des câbles et à les souder. 
+                                    Ce projet m'a permis de me rappeler des notions en C++ que j'ai apprises lors de mon année de terminale STI2D.
+                                </div>
                             </div>
+                        </div>
                         </div>
 
                     
@@ -1539,7 +1593,7 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                ... contenu ...
+
                             </div>
                         </div>
 
@@ -1848,23 +1902,39 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ton texte ici...</p>
+                                <p>J'ai pu apprendre lors des cours et TP de R2.06 la dangerosité des installations électriques. 
+                                    J'ai donc appris à détecter lorsqu'une installation ne respecte pas la norme IP2X et à 
+                                    réagir en conséquence. En effet lors de la SAE 2.3, qui concerne l'habilitation électrique, 
+                                    j'ai dû remplacer un contacteur dans une armoire électrique alors qu'il y avait du cuivre 
+                                    apparent, ce qui est très dangereux car la pièce nue est sous tension (230V) ce qui présente 
+                                    un risque mortel pour l'homme en cas de contact direct. Pour neutraliser ce danger, j'ai dû 
+                                    installer une nappe isolante à l'aide de pinces et d'EPI, tels que les gants isolants, 
+                                    la visière de protection, la blouse et le tapis isolant.</p> 
                             </div>
                         </div>   
 
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                AC14.03 : Connaître les principaux types d'attaque informatique                         
+                                AC14.03 : Connaître les principaux types d'attaque informatique.                         
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Ton texte ici...</p>
+                                <p>La ressource R1.11 m'a permis d'étudier les principaux types d'attaques informatiques, 
+                                    telles que les attaques par force brute ou par dictionnaire. J'ai ensuite pu mettre cette 
+                                    théorie en pratique lors des TP et de l'escape game de la SAÉ 1.1, où nous avons adopté le 
+                                    point de vue de l'attaquant. Cette démarche de sécurité offensive est cruciale pour apprendre 
+                                    à se défendre efficacement. J'ai ainsi assimilé concrètement le déroulement d'une 
+                                    cyberattaque en manipulant des outils standards de l'industrie : j'ai utilisé Nmap pour 
+                                    cartographier le système cible, puis John the Ripper et Hydra pour exploiter les failles et 
+                                    compromettre des identifiants (noms d'utilisateur et mots de passe). J'ai donc compris
+                                    à quel point adopter une bonne hygiène informatique est importante pour neutraliser la majorité
+                                    des attaques.</p>
                             </div>
                         </div>                          
                         
                         <div class="accordion-item">
                             <button class="accordion-btn">
-                                AC14.04 : Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité                         
+                                AC14.04 : Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité.                         
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
@@ -1971,8 +2041,6 @@ const skillsData = {
             const skill = skillsData[id];
             document.getElementById('skill-title').textContent = skill.title;
             document.getElementById('skill-body').innerHTML = skill.body;
-            slideIndex = 1;
-            showDivs(slideIndex);
             const overlay = document.getElementById('skill-overlay');
             overlay.style.display = 'block';
             overlay.scrollTop = 0;
@@ -1982,20 +2050,14 @@ const skillsData = {
                 overlay.classList.add('dark-mode');
             }
 
-            // Déplace étoiles ET nuages dans l'overlay
             overlay.appendChild(document.getElementById('stars'));
             overlay.appendChild(document.getElementById('clouds'));
 
+            // Accordéon : toggle sur le cliqué uniquement
             document.querySelectorAll('#skill-body .accordion-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const item = btn.parentElement;
-                    const isActive = item.classList.contains('active');
-                    document.querySelectorAll('#skill-body .accordion-item').forEach(i => {
-                        i.classList.remove('active');
-                    });
-                    if (!isActive) {
-                        item.classList.add('active');
-                    }
+                    item.classList.toggle('active');
                 });
             });
         }
@@ -2054,21 +2116,39 @@ const skillsData = {
             starsContainer.appendChild(star);
         }
     
-        var slideIndex = 1;
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function showDivs(n) {
-            var x = document.getElementsByClassName("mySlides");
+        // ==========================================
+        //  GESTION DES DIAPORAMAS 
+        // ==========================================
+        function plusDivs(n, button) {
+            // On récupère le conteneur du diaporama où on a cliqué
+            var container = button.closest('.w3-display-container');
+            
+            // On récupère UNIQUEMENT les slides de CE conteneur
+            var x = container.getElementsByClassName("mySlides");
             if (x.length === 0) return;
-            if (n > x.length) { slideIndex = 1; }
-            if (n < 1) { slideIndex = x.length; }
+
+            // On cherche l'index de l'image actuellement affichée
+            var currentSlideIndex = 0;
+            for (var i = 0; i < x.length; i++) {
+                if (x[i].style.display === "block" || window.getComputedStyle(x[i]).display === "block") {
+                    currentSlideIndex = i;
+                    break;
+                }
+            }
+
+            // On cache toutes les images de CE conteneur uniquement
             for (var i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
-            x[slideIndex - 1].style.display = "block";
+
+            // On calcule le nouvel index
+            var newIndex = currentSlideIndex + n;
+            if (newIndex >= x.length) { newIndex = 0; }
+            if (newIndex < 0) { newIndex = x.length - 1; }
+
+            // On affiche la nouvelle image
+            x[newIndex].style.display = "block";
         }
 
     </script>
