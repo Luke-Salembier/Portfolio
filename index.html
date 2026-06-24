@@ -1436,7 +1436,14 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">                              
-                                <p></p>
+                                <p>Ma participation aux diverses SAÉ réalisées en partenariat avec le milieu industriel 
+                                    (SAÉ 2.1, SAÉ 2.2 & SAÉ 2.4) a été un 
+                                    tremplin pour acquérir des compétences d'analyse et de conseil stratégique. Ces expériences 
+                                    m'ont appris à évaluer les besoins d'un client afin de lui proposer des solutions concrètes 
+                                    pour améliorer sa productivité et faire évoluer son infrastructure vers une industrie 4.0 ou 
+                                    5.0. Je suis donc capable de comprendre un cahier des charges et de la reformuler,
+                                    et de présenter mes solutions pour l'entreprise, ce que j'ai produit et ce qui devrait 
+                                    être fait pour être adapté en entreprise.</p>
                             </div>
                         </div>    
                     </div> `
@@ -1498,7 +1505,10 @@ const skillsData = {
                                     autonome pour concevoir des supports clairs et professionnels, qu'il s'agisse de rédiger 
                                     une notice d'utilisation, un fichier README pour documenter mes programmes Python, ou une 
                                     affiche de projet. Ma très bonne compréhension écrite et orale me permet ainsi de mener des 
-                                    conversations fluides et de collaborer sans barrière à l'échelle internationale.</p>
+                                    conversations fluides et de collaborer sans barrière à l'échelle internationale. Je pense 
+                                    quand même pouvoir progresser en allant chercher dans des documentations techniques plus
+                                    complexes afin d'enrichir mon vocabulaire technique mais aussi travailler mon expression à l'oral
+                                    pour fluidifier d'avantage mon discours.</p>
                             </div>
                         </div>
 
@@ -1511,7 +1521,16 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p></p>
+                                <p>J'ai pu valider le fonctionnement de diverses solutions d'automatisme ou de robotique en 
+                                atelier ou plutôt en classe, en R1.19 et R1.20 j'ai pu réaliser programmer, câbler et 
+                                configurer des cartes d'entrées/sorties d'automates. Ensuite j'ai pu réaliser d'autres solutions d'automatisme
+                                en R2.17 et R2.18 qui sont centrées sur la configuration des régulateurs en régulations et asservissement
+                                des procédés. Enfin, j'ai pu valider le fonctionnement de solutions de robotique dans les ressources
+                                R1.21 et R2.21 où j'ai pu proposer plusieurs solutions de robotique en utilisant les robots de Fanuc
+                                et ceux de Universal Robots. En effet j'ai réaliser une série de travaux pratique qui m'a permis de
+                                d'approfondir considérablement mes connaissances sur la programmation des robots Fanuc et d'optimiser
+                                mes fonctions notamment avec l'utilisation des positions enregistrées plutôt que d'utiliser des 
+                                positions par apprentissage. </p>
                             </div>
                         </div>
 
@@ -1584,15 +1603,83 @@ const skillsData = {
 
 
                     <h1>Situations Professionnelles</h1>   
-                        <div class="accordion-item">
-                            <button class="accordion-btn">
-                                Mise en service d'une solution d'automatisme ou de robotique.
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">                              
-                                <p></p>
-                            </div>
-                        </div>    
+                    <div class="accordion-item">
+                        <button class="accordion-btn">
+                            Mise en service d'une solution d'automatisme ou de robotique.
+                            <span class="accordion-icon">+</span>
+                        </button>
+                        <div class="accordion-content">                              
+                            
+                            <!-- CONTENEUR DES SOUS-ACCORDÉONS (Niveau 2) -->
+                            <div class="accordion" style="margin-top: 1rem;">
+                                
+                                <!-- SAÉ 1.2 -->
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 1.2 - Apprendre à câbler les capteurs et actionneurs
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        ... contenu ...
+                                    </div>
+                                </div> 
+                                <!-- CORRECTION 1 : J'ai retiré le </div> en trop qui était ici et qui fermait tout le groupe trop tôt. -->
+
+                                <!-- SAÉ 2.1 -->
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 2.1 - Conception et déploiement d'une solution d'automatisme
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <div class="w3-content w3-display-container" style="text-align: center; margin: 2rem 0;">
+                                            <div class="img-card" style="display: inline-block;">
+                                                <img class="mySlides" src="sae21_affiche.png" alt="Description" onclick="openLightbox(this.src)" style="cursor: zoom-in; display: block;">
+                                                <video class="mySlides" width="100%" controls style="border-radius: 8px;">
+                                                    <source src="sae2.1.mp4" type="video/mp4">
+                                                </video>
+                                            </div>
+                                            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)">&#10094;</button>
+                                            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)">&#10095;</button>
+                                        </div>
+                                        <div class="w3-panel w3-round-large">
+                                            <h4>Objectifs :</h4>
+                                            <ul style="padding-left: 1.5rem; list-style: disc;">
+                                                <li>Réaliser un système capable de mesurer la rectitude du profilé directement sur la machine qui a réalisé l'usinage.</li>
+                                                <li>La mesure de rectitude devra pouvoir être mesurée directement par l'opérateur au travers d'une IHM. A la fin de la mesure, la valeur maximale mesurée devra pouvoir être affichée à l'écran.</li>
+                                                <li>Les différentes valeur maximales mesurées devront pouvoir être stockées soit localement, soit sur un serveur distant. Chaque entrée devra comporter la date et l'heure de la mesure, la référence de la pièce et la mesure en mm.</li>
+                                            </ul>
+                                            Lors de ce projet, j'ai effectué des schémas électriques ainsi que le câblage des moteurs pas à pas, du laser et du capteur de luminosité, des modélisations 3D des supports du laser et du capteur, la programmation en C++ d'un capteur de luminosité qui récupère une valeur analogique de l'intensité lumineuse et qui la convertit en valeur booléenne lorsqu'elle atteint un seuil élevé ce qui signifie que la lumière du laser touche le capteur, j'ai aussi appris à dénuder des câbles et à les souder. Ce projet m'a permis de me rappeler des notions en C++ que j'ai apprises lors de mon année de terminale STI2D.
+                                        </div>
+                                    </div>
+                                </div> <!-- CORRECTION 2 : Ajout du </div> manquant pour fermer la SAÉ 2.1 -->
+
+                                <!-- SAÉ 2.2 -->
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 2.2 - Mise en service et déploiement d'une solution de robotique
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        ... contenu ...
+                                    </div>
+                                </div>
+
+                                <!-- SAÉ 2.4 -->
+                                <div class="accordion-item sae">
+                                    <button class="accordion-btn">
+                                        SAÉ 2.4 - Amélioration de la production
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        ... contenu ...
+                                    </div>
+                                </div>
+
+                            </div> <!-- Fermeture du CONTENEUR DES SOUS-ACCORDÉONS (Niveau 2) -->
+                            
+                        </div> <!-- Fermeture de ACCORDION-CONTENT PRINCIPAL -->
+                    </div> <!-- CORRECTION 3 : Fermeture de ACCORDION-ITEM PRINCIPAL -->
                         <br>
                         <div class="accordion-item">
                             <button class="accordion-btn">
@@ -1614,82 +1701,9 @@ const skillsData = {
                             </div>
                         </div>  
 
-                    <h1>SAÉ</h1>
-                    <div class="accordion">
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 1.2 - Apprendre à câbler les capteurs et actionneurs
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                ... contenu ...
-                            </div>
-                        </div>
-
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 2.1 - Conception et déploiement d'une solution d'automatisme
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                <div class="w3-content w3-display-container" style="text-align: center; margin: 2rem 0;">
-                                    <div class="img-card" style="display: inline-block;">
-                                        <img class="mySlides" src="sae21_affiche.png" alt="Description"
-                                        onclick="openLightbox(this.src)"
-                                        style="cursor: zoom-in; display: block;">
-                                        
-                                        <video class="mySlides" width="100%" controls style="border-radius: 8px;">
-                                            <source src="sae2.1.mp4" type="video/mp4">
-                                        </video>
-
-                                    </div>
-                                    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1, this)">&#10094;</button>
-                                    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1, this)">&#10095;</button>
-                                </div>
-                                <div class="w3-panel w3-round-large">
-                                    <h4>Objectifs :</h4>
-                                    <ul style="padding-left: 1.5rem; list-style: disc;">
-                                        <li>Réaliser un système capable de mesurer la rectitude du profilé directement sur la machine qui a
-                                        réalisé l'usinage.</li>
-                                        <li>La mesure de rectitude devra pouvoir être mesurée directement par l'opérateur au travers d'une IHM.
-                                        A la fin de la mesure, la valeur maximale mesurée devra pouvoir être affichée à l'écran.</li>
-                                        <li>Les différentes valeur maximales mesurées devront pouvoir être stockées soit localement, soit sur
-                                        un serveur distant. Chaque entrée devra comporter la date et l'heure de la mesure, la référence de la
-                                        pièce et la mesure en mm.</li>
-                                    </ul>
-                                    Lors de ce projet, j'ai effectué des schémas électriques ainsi que le câblage des moteurs
-                                    pas à pas, du laser et du capteur de luminosité, des modélisations 3D des supports du laser et du capteur, 
-                                    la programmation en C++ d'un capteur de luminosité qui récupère une valeur analogique de l'intensité 
-                                    lumineuse et qui la convertit en valeur booléenne lorsqu'elle atteint un seuil élevé ce qui signifie que 
-                                    la lumière du laser touche le capteur, j'ai aussi appris à dénuder des câbles et à les souder. 
-                                    Ce projet m'a permis de me rappeler des notions en C++ que j'ai apprises lors de mon année de terminale STI2D.
-                                </div>
-                            </div>
-                        </div>
-                        </div>
 
                     
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 2.2 - Mise en service et déploiement d'une solution de robotique
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-
-                            </div>
-                        </div>
-
-                    
-                        <div class="accordion-item sae">
-                            <button class="accordion-btn">
-                                SAÉ 2.4 - Amélioration de la production
-                                <span class="accordion-icon">+</span>
-                            </button>
-                            <div class="accordion-content">
-                                ... contenu ...
-                            </div>
-                        </div>
-                    </div>                
+                
                 `
 
             },
