@@ -12,13 +12,13 @@
     <style>
         /* --- VARIABLES (Mode Clair) --- */
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e293b;
-            --bg-color: #82C8E5;
-            --text-color: #334155;
+            --primary-color: #000dff;
+            --secondary-color: #001e4e;
+            --bg-color: transparent;
+            --text-color: #040036;
             --white: #ffffff;
             --card-bg: #ffffff;
-            --nav-bg: #539aab;
+            --nav-bg: rgba(255, 255, 255, 0.85);
             --shadow: rgba(0,0,0,0.05);
         }
 
@@ -284,7 +284,7 @@
         .tag {
             font-size: 0.8rem;
             background: var(--primary-color);
-            color: var(--bg-color);
+            color: #ffffff;
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             opacity: 0.9;
@@ -662,71 +662,10 @@
             50% { opacity: 0.6; }
         }
 
-        /* --- NUAGES --- */
-        .clouds {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
 
-        .cloud {
-            position: absolute;
-            background: white;
-            border-radius: 50px;
-            opacity: 0;
-            animation: floatCloud linear infinite;
-            animation-fill-mode: both;
-        }
-
-        .cloud::before,
-        .cloud::after {
-            content: '';
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .cloud::before {
-            width: 60%;
-            height: 150%;
-            top: -50%;
-            left: 15%;
-        }
-
-        .cloud::after {
-            width: 40%;
-            height: 120%;
-            top: -35%;
-            right: 15%;
-        }
-
-        .cloud-1 { width: 200px; height: 50px; top: 8%;  animation-duration: 20s; animation-delay: 0s;   opacity: 0.6; }
-        .cloud-2 { width: 280px; height: 65px; top: 20%; animation-duration: 28s; animation-delay: 3s;   opacity: 0.5; }
-        .cloud-3 { width: 150px; height: 40px; top: 35%; animation-duration: 22s; animation-delay: 7s;   opacity: 0.7; }
-        .cloud-4 { width: 230px; height: 55px; top: 50%; animation-duration: 32s; animation-delay: 1s;   opacity: 0.4; }
-        .cloud-5 { width: 170px; height: 45px; top: 65%; animation-duration: 25s; animation-delay: 10s;  opacity: 0.6; }
-        .cloud-6 { width: 250px; height: 60px; top: 78%; animation-duration: 18s; animation-delay: 5s;   opacity: 0.5; }
-        .cloud-7 { width: 180px; height: 48px; top: 90%; animation-duration: 30s; animation-delay: 14s;  opacity: 0.65; }
-
-        @keyframes floatCloud {
-            0%   { transform: translateX(-10vw); opacity: 0; }
-            5%   { opacity: 1; }
-            95%  { opacity: 1; }
-            100% { transform: translateX(100vw);  opacity: 0; }
-        }
-
-
-        /* Mode clair : nuages visibles, étoiles cachées */
+        /* Étoiles visibles uniquement en mode sombre */
         .stars { display: none; }
-        .clouds { display: block; }
-
-        /* Mode sombre : étoiles visibles, nuages cachés */
         body.dark-mode .stars { display: block; }
-        body.dark-mode .clouds { display: none; }
 
         .mySlides {display:none;}
 
@@ -750,9 +689,103 @@
             padding: 0 1.5rem 1.2rem;
         }
 
+        #bg-circles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #00adef 0%, #0076e5 100%);
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #circle-small {
+            animation: circle-pulse 3s ease-in-out infinite alternate;
+            animation-delay: 0s;
+            position: absolute;
+            top: 200px;
+            left: -150px;
+            background: #fff;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        #circle-medium {
+            animation: circle-pulse 3s ease-in-out infinite alternate;
+            animation-delay: 0.3s;
+            position: absolute;
+            top: 50px;
+            left: -300px;
+            background: #fff;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        #circle-large {
+            animation: circle-pulse 3s ease-in-out infinite alternate;
+            animation-delay: 0.6s;
+            position: absolute;
+            top: -100px;
+            left: -450px;
+            background: #fff;
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            opacity: 0.2;
+        }
+
+        #circle-xlarge {
+            animation: circle-pulse 3s ease-in-out infinite alternate;
+            animation-delay: 0.9s;
+            position: absolute;
+            top: -250px;
+            left: -600px;
+            background: #fff;
+            width: 1200px;
+            height: 1200px;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+
+        #circle-xxlarge {
+            animation: circle-pulse 3s ease-in-out infinite alternate;
+            animation-delay: 1.2s;
+            position: absolute;
+            top: -400px;
+            left: -750px;
+            background: #fff;
+            width: 1500px;
+            height: 1500px;
+            border-radius: 50%;
+            opacity: 0.05;
+        }
+
+        @keyframes circle-pulse {
+            0%   { transform: scale(1.0); }
+            100% { transform: scale(1.1); }
+        }
+
+        body.dark-mode #bg-circles {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
+
+<div id="bg-circles">
+    <div id="circle-small"></div>
+    <div id="circle-medium"></div>
+    <div id="circle-large"></div>
+    <div id="circle-xlarge"></div>
+    <div id="circle-xxlarge"></div>
+</div>
 
 <!-- Bouton retour en haut -->
 <button id="back-to-top" onclick="scrollToTop()">↑</button>
@@ -777,15 +810,6 @@
 
 <!-- Nuages et étoiles -->
 <div class="stars" id="stars"></div>
-<div class="clouds" id="clouds">
-    <div class="cloud cloud-1"></div>
-    <div class="cloud cloud-2"></div>
-    <div class="cloud cloud-3"></div>
-    <div class="cloud cloud-4"></div>
-    <div class="cloud cloud-5"></div>
-    <div class="cloud cloud-6"></div>
-    <div class="cloud cloud-7"></div>
-</div>
 
         <!-- Hero Section -->
         <section id="home">
@@ -2255,7 +2279,7 @@ const skillsData = {
             }
 
             overlay.appendChild(document.getElementById('stars'));
-            overlay.appendChild(document.getElementById('clouds'));
+            overlay.appendChild(document.getElementById('bg-circles')); 
 
             document.querySelectorAll('#skill-body .accordion-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
@@ -2283,7 +2307,7 @@ const skillsData = {
 
             // Remet étoiles ET nuages dans le body
             document.body.appendChild(document.getElementById('stars'));
-            document.body.appendChild(document.getElementById('clouds'));
+            document.body.appendChild(document.getElementById('bg-circles'));
         }
 
         function scrollToTop() {
