@@ -775,6 +775,50 @@
             display: none;
         }
 
+        /* --- NAV ENTRE UE --- */
+        .ue-nav {
+            position: fixed;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+            z-index: 3000;
+        }
+
+        .ue-nav-btn {
+            background: #eff6ff;
+            border: 1.5px solid #bfdbfe;
+            color: var(--primary-color);
+            padding: 0.6rem 1rem;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, transform 0.2s;
+            white-space: nowrap;
+        }
+
+        .ue-nav-btn:hover {
+            background: var(--primary-color);
+            color: #ffffff;
+            transform: translateX(-3px);
+        }
+
+        .ue-nav-btn.active {
+            background: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+
+        body.dark-mode .ue-nav-btn {
+            background: #1e3a5f;
+            border-color: #2d5a9e;
+            color: var(--primary-color);
+        }
+
     </style>
 </head>
 <body>
@@ -807,6 +851,23 @@
             </ul>
         </nav>
     </header>
+
+<div id="skill-overlay" style="display:none;">
+    <div id="skill-page">
+        <button class="back-btn" onclick="closeSkill()">← Retour</button>
+
+        <!-- Navigation entre UE -->
+        <div class="ue-nav">
+            <button class="ue-nav-btn" onclick="openSkill('ue1')">⚙️ UE1</button>
+            <button class="ue-nav-btn" onclick="openSkill('ue2')">🖥️ UE2</button>
+            <button class="ue-nav-btn" onclick="openSkill('ue3')">🔧 UE3</button>
+            <button class="ue-nav-btn" onclick="openSkill('ue4')">🛡️ UE4</button>
+        </div>
+
+        <h2 id="skill-title"></h2>
+        <div id="skill-body"></div>
+    </div>
+</div>
 
 <!-- Nuages et étoiles -->
 <div class="stars" id="stars"></div>
@@ -1704,12 +1765,12 @@ const skillsData = {
                                             </ul>
                                             Lors de ce projet, j'ai effectué des schémas électriques ainsi que le câblage des 
                                             moteurs pas à pas, du laser et du capteur de luminosité, des modélisations 3D des 
-                                            supports du laser et du capteur, la programmation en C++ d'un capteur de luminosité 
-                                            qui récupère une valeur analogique de l'intensité lumineuse et qui la convertit en 
-                                            valeur booléenne lorsqu'elle atteint un seuil élevé ce qui signifie que la lumière 
-                                            du laser touche le capteur, j'ai aussi appris à dénuder des câbles et à les souder. 
-                                            Ce projet m'a permis de me rappeler des notions en C++ que j'ai apprises lors de mon 
-                                            année de terminale STI2D.
+                                            supports du laser et du capteur, et la programmation en C++ d'un capteur de 
+                                            luminosité qui récupère une valeur analogique de l'intensité lumineuse et qui la 
+                                            convertit en valeur booléenne lorsqu'elle atteint un seuil élevé, ce qui signifie 
+                                            que la lumière du laser touche le capteur. J'ai aussi appris à dénuder des câbles et 
+                                            à les souder. Ce projet m'a permis de me rappeler des notions en C++ que j'avais 
+                                            apprises lors de mon année de terminale STI2D.
                                         </div>
                                     </div>
                                 </div> 
@@ -1858,14 +1919,14 @@ const skillsData = {
                                 <span class="accordion-icon">+</span>
                             </button>
                             <div class="accordion-content">
-                                <p>Pour garantir la conformité et la sûreté des systèmes industriels, je m'impose une 
-                                    méthodologie de diagnostic rigoureuse inspirée de ma pratique régulière du débogage en 
-                                    programmation. La recherche systématique et la correction d'erreurs (que ce soit sur des 
-                                    scripts de gestion ou sur des circuits électriques) m'ont aidé à structurer ma façon 
-                                    d'aborder une panne. En veillant à ce que chaque ajustement de câblage ou chaque 
-                                    modification logicielle respecte les lois de l'électricité et les standards de l'entreprise, 
-                                    je m'assure que mes actions de maintenance ne compromettent jamais la sécurité des opérateurs 
-                                    ni la qualité du procédé industriel.</p>
+                                <p>Le respect des exigences Qualité, Hygiène, Sécurité, Sûreté et Environnement (QHSSE) guide 
+                                    l'ensemble de mes interventions techniques. Qu'il s'agisse d'appliquer des protocoles de 
+                                    sécurité électrique ou de me conformer aux standards industriels lors de la programmation en 
+                                    Python ou sur TIA Portal, j'essaie au maximum de rendre un programme facilement 
+                                    compréhensible en donnant des noms de variables, de fonctions et de fichiers explicites, 
+                                    et en commentant mes lignes. J'ai pu constater, lors d'une visite sur le site de SLB à 
+                                    Béziers ou de Valeo à Mazamet, leurs exigences QHSSE, notamment l'interdiction de 
+                                    l'utilisation du téléphone portable et le port des chaussures de sécurité chez Valeo.</p>
                             </div>
                         </div>
 
@@ -2311,12 +2372,18 @@ const skillsData = {
             overlay.scrollTop = 0;
             backToTopBtn.classList.remove('visible');
 
+            // Met en surbrillance le bouton actif
+            document.querySelectorAll('.ue-nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.ue-nav-btn[onclick="openSkill('${id}')"]`).classList.add('active');
+
             if (document.body.classList.contains('dark-mode')) {
                 overlay.classList.add('dark-mode');
             }
 
             overlay.appendChild(document.getElementById('stars'));
-            overlay.appendChild(document.getElementById('bg-circles')); 
+            overlay.appendChild(document.getElementById('bg-circles'));
 
             document.querySelectorAll('#skill-body .accordion-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
@@ -2324,13 +2391,9 @@ const skillsData = {
                     const item = btn.parentElement;
                     const isActive = item.classList.contains('active');
                     const parent = item.parentElement;
-
-                    // Ferme uniquement les frères du même niveau
                     parent.querySelectorAll(':scope > .accordion-item').forEach(i => {
                         i.classList.remove('active');
                     });
-
-                    // Ouvre le cliqué si il était fermé
                     if (!isActive) {
                         item.classList.add('active');
                     }
