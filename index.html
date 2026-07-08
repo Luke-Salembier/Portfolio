@@ -850,15 +850,16 @@
                 display: flex; 
                 align-items: center; 
                 justify-content: center; 
-                /* On s'assure qu'il reste bien par-dessus tout le reste */
+                top: 1rem; /* Place le bouton à 1rem du haut */
+                transform: none; /* Annule le centrage vertical (translateY(-50%)) */
                 z-index: 3002; 
             }
             
             .ue-nav { 
                 display: none; 
-                /* On décale le menu sur la gauche pour ne pas cacher le bouton hamburger */
+                top: 1rem; /* Aligne aussi le menu en haut pour qu'il soit en face du bouton */
+                transform: none; /* Annule le centrage vertical du menu */
                 right: 4.5rem; 
-                /* On ajoute un fond et une ombre pour qu'il soit bien lisible par-dessus le texte */
                 background: var(--card-bg);
                 padding: 1rem;
                 border-radius: 12px;
@@ -868,7 +869,6 @@
             
             .ue-nav.open { 
                 display: flex; 
-                /* Petite animation d'apparition */
                 animation: fadeIn 0.2s ease;
             }
         }
@@ -984,14 +984,6 @@
         </div>
     </section>
 
-    <!-- Page de détail compétence (overlay) -->
-    <div id="skill-overlay" style="display:none;">
-        <div id="skill-page">
-            <button class="back-btn" onclick="closeSkill()">← Retour</button>
-            <h2 id="skill-title"></h2>
-            <div id="skill-body"></div>
-        </div>
-    </div>
 
     <!-- Projects Section -->
     <section id="projects">
